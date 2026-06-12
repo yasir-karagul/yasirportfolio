@@ -1,4 +1,5 @@
 import { BusinessCardSection } from "@/components/business-card-section";
+import { FireSparks } from "@/components/fire-sparks";
 import { HeroSection } from "@/components/hero-section";
 import { SiteNav } from "@/components/site-nav";
 import { StackSection } from "@/components/stack-section";
@@ -7,6 +8,7 @@ import { buildLog, fieldMap } from "@/lib/portfolio-data";
 export default function Home() {
   return (
     <main className="site-frame">
+      <FireSparks />
       <SiteNav />
       <HeroSection />
       <BusinessCardSection
