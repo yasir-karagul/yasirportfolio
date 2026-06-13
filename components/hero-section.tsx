@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ActionLink } from "@/components/action-link";
 import { BusinessCard } from "@/components/business-card";
 import { ProfileLinks } from "@/components/profile-links";
-import { stats } from "@/lib/portfolio-data";
+import { heroStats } from "@/lib/portfolio-data";
 
 export function HeroSection() {
   return (
@@ -11,28 +11,31 @@ export function HeroSection() {
       <div className="hero-grid">
         <BusinessCard className="identity-card" tone="strong">
           <p className="card-kicker">
-            Computer engineer / game systems / product interfaces
+            Computer engineer / operational software / UAV systems
           </p>
           <h1 className="hero-title">Yasir Khalid</h1>
           <p className="hero-subtitle">
-            Building software with tactical precision and game-engine energy.
+            Building practical systems across factories, mobile workflows,
+            UAV projects, and real-time interfaces.
           </p>
           <p className="hero-copy">
-            Based in Turkey, I work across Unreal Engine 5.7, modern web
-            technologies, Flutter mobile development, and practical AI
-            integration. The interface is dark, fast, and red-lit by design.
+            Based in Turkey, I work across Flutter production apps, Next.js
+            platforms, Python AI experiments, UAV software integration, and
+            UE5.7 real-time systems. This portfolio focuses on verifiable work:
+            public repositories, CV-backed projects, and hosted media.
           </p>
 
           <div className="hero-actions">
-            <ActionLink href="#field-map" variant="primary">
-              Enter Field Map
+            <ActionLink href="#selected-work" variant="primary">
+              View work
             </ActionLink>
-            <ActionLink href="#build-log">View Systems</ActionLink>
+            <ActionLink href="#oktant">Oktant case</ActionLink>
+            <ActionLink href="/resume">Resume</ActionLink>
             <ProfileLinks />
           </div>
 
           <div className="stat-strip" aria-label="Portfolio stats">
-            {stats.map((stat) => (
+            {heroStats.map((stat) => (
               <div className="stat-card" key={stat.label}>
                 <span>{stat.value}</span>
                 <p>{stat.label}</p>
@@ -42,7 +45,7 @@ export function HeroSection() {
         </BusinessCard>
 
         <BusinessCard className="character-business-card" tone="strong">
-          <div className="character-card__label">Crimson / Tactical / Neon</div>
+          <div className="character-card__label">Dark / Real-time / Systems</div>
           <Image
             src="/images/cyber-red-character.png"
             alt="Original cyber red tactical character with neon blade"

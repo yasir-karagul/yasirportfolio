@@ -1,22 +1,36 @@
+import Image from "next/image";
+import Link from "next/link";
 import { ProfileLinks } from "@/components/profile-links";
+import { profileImage } from "@/lib/portfolio-data";
 
 const navItems = [
-  { href: "#field-map", label: "Field Map" },
-  { href: "#build-log", label: "Build Log" },
-  { href: "#stack", label: "Stack" },
+  { href: "/#selected-work", label: "Work" },
+  { href: "/#oktant", label: "Oktant" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#capabilities", label: "Capabilities" },
+  { href: "/#resume", label: "Resume" },
 ] as const;
 
 export function SiteNav() {
   return (
     <nav aria-label="Primary navigation" className="nav-card">
-      <a className="nav-card__brand" href="#top">
-        Yasir Khalid
-      </a>
+      <Link className="nav-card__brand" href="/">
+        <span className="nav-card__avatar-slot" aria-hidden="true">
+          <Image
+            alt=""
+            className="nav-card__avatar"
+            height={36}
+            src={profileImage.src}
+            width={36}
+          />
+        </span>
+        <span>Yasir Khalid</span>
+      </Link>
       <div className="nav-card__links">
         {navItems.map((item) => (
-          <a href={item.href} key={item.href}>
+          <Link href={item.href} key={item.href}>
             {item.label}
-          </a>
+          </Link>
         ))}
         <ProfileLinks variant="nav" />
       </div>
